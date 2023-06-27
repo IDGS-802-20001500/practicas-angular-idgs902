@@ -1,0 +1,19 @@
+.contenedor{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+}
+
+.left{
+  width: 700px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.right{
+  width: 600px;
+  height: 200px;
+  padding: 10px;
+  border-left: 2px solid gainsboro;
+}

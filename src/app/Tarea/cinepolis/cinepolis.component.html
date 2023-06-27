@@ -1,1 +1,44 @@
-<p>cinepolis works!</p>
+<div class="contenedor">
+
+  <div class="left">
+    <div class="row">
+      <div class="col-8">
+        <label>Nombre del cliente: </label>
+        <input class="form-control" type="text" [(ngModel)]="cliente" />
+      </div>
+      <div class="col-4">
+        <label>Número de personas: </label>
+        <input class="form-control" type="number" min="1" max="100" [(ngModel)]="personas"/>
+      </div>
+      <div class="col-4">
+        <label>Número de boletos: </label>
+        <input class="form-control" type="number" min="1" max="100" [(ngModel)]="boletos"/>
+      </div>
+      <div class="col-8">
+        <label>¿Tiene tarjeta CINECO?</label>
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="card">
+          <mat-radio-button value="No" *ngFor="let op of opciones" [value]="op">{{op}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="col-4">
+        <br>
+        <button class="btn btn-outline-primary" (click)="compra()">Comprar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="row">
+      <div class="col-12">
+        <h1 style="font-size: 36px;">Cliente: {{cliente}}</h1>
+      </div>
+      <div class="col-12">
+        <h1 style="font-size: 36px;">Total: ${{total}}</h1>
+      </div>
+      <div class="col-12">
+        <h1 style="font-size: 36px;">{{mensaje}}</h1>
+      </div>
+    </div>
+  </div>
+
+</div>

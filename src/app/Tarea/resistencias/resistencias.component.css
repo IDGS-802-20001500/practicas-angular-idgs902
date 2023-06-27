@@ -1,12 +1,24 @@
 .tablaValor{
   border: 1px solid black;
+
 }
 .titulos-tabla{
   border: 1px solid black;
+
 }
+
+.titulos-tabla th{
+  border-left: 1px solid black;
+  padding: 10px;
+  font-size: 28px;
+}
+
 .cuerpo-tabla{
   border: 1px solid black;
 }
- .cuerpo-tabla td{
 
+.cuerpo-tabla td{
+  border-left: 1px solid black;
+  padding: 10px;
+  font-size: 28px;
  }

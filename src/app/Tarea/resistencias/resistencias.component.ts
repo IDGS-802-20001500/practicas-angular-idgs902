@@ -7,12 +7,28 @@ import { Component } from '@angular/core';
 })
 export class ResistenciasComponent {
 
+  colores = [
+    'black',
+    'brown',
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue',
+    'purple',
+    'gray',
+    'white'
+  ];
 
+  colorTol = [
+    'gold',
+    'silver'
+  ];
 
-  band1:string='Negro';
-  band2:string='Negro';
-  band3:string='Negro';
-  tole:string="";
+  band1:string='black';
+  band2:string='black';
+  band3:string='black';
+  tole:string='gold';
   banda1:number=0;
   banda2:number=0;
   banda3:number=0;
@@ -23,34 +39,34 @@ export class ResistenciasComponent {
 
   color1(){
     switch(this.band1){
-      case "negro":
+      case "black":
         this.banda1=0;
       break;
-      case "cafe":
+      case "brown":
         this.banda1=1;
       break;
-      case "rojo":
+      case "red":
         this.banda1=2;
       break;
-      case "naranja":
+      case "orange":
         this.banda1=3;
       break;
-      case "amarillo":
+      case "yellow":
         this.banda1=4;
       break;
-      case "verde":
+      case "green":
         this.banda1=5;
       break;
-      case "azul":
+      case "blue":
         this.banda1=6;
       break;
-      case "violeta":
+      case "purple":
         this.banda1=7;
       break;
-      case "gris":
+      case "gray":
         this.banda1=8;
       break;
-      case "blanco":
+      case "white":
         this.banda1=9;
       break;
 
@@ -59,34 +75,34 @@ export class ResistenciasComponent {
 
   color2(){
     switch(this.band2){
-      case "negro":
+      case "black":
         this.banda2=0;
       break;
-      case "cafe":
+      case "brown":
         this.banda2=10;
       break;
-      case "rojo":
+      case "red":
         this.banda2=20;
       break;
-      case "naranja":
+      case "orange":
         this.banda2=30;
       break;
-      case "amarillo":
+      case "yellow":
         this.banda2=40;
       break;
-      case "verde":
+      case "green":
         this.banda2=50;
       break;
-      case "azul":
+      case "blue":
         this.banda2=60;
       break;
-      case "violeta":
+      case "purple":
         this.banda2=70;
       break;
-      case "gris":
+      case "gray":
         this.banda2=80;
       break;
-      case "blanco":
+      case "white":
         this.banda2=90;
       break;
 
@@ -95,34 +111,34 @@ export class ResistenciasComponent {
 
   color3(){
     switch(this.band3){
-      case "negro":
+      case "black":
         this.banda3=1;
       break;
-      case "cafe":
+      case "brown":
         this.banda3=10;
       break;
-      case "rojo":
+      case "red":
         this.banda3=100;
       break;
-      case "naranja":
+      case "orange":
         this.banda3=1000;
       break;
-      case "amarillo":
+      case "yellow":
         this.banda3=10000;
       break;
-      case "verde":
+      case "green":
         this.banda3=100000;
       break;
-      case "azul":
+      case "blue":
         this.banda3=1000000;
       break;
-      case "violeta":
+      case "purple":
         this.banda3=10000000;
       break;
-      case "gris":
+      case "gray":
         this.banda3=100000000;
       break;
-      case "blanco":
+      case "white":
         this.banda3=1000000000;
       break;
     }
@@ -131,10 +147,10 @@ export class ResistenciasComponent {
 
   tol(){
     switch(this.tole){
-      case "oro":
+      case "gold":
         this.tolerancia=0.05;
       break;
-      case "plata":
+      case "silver":
         this.tolerancia=0.1;
       break;
     }
@@ -152,8 +168,5 @@ export class ResistenciasComponent {
     this.max = (((this.banda1+this.banda2)*this.banda3)*(this.tolerancia+1))
 
   }
-
-
-
 
 }

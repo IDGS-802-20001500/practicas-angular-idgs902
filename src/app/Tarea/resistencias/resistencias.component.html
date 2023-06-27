@@ -6,8 +6,8 @@
       <mat-form-field>
         <mat-label>Banda 1</mat-label>
         <mat-select [(ngModel)]="band1">
-          <!-- <mat-option value="negro" *ngFor="let bd1 of banda1" [value]="bd1">{{bd1}}</mat-option> -->
-          <mat-option value="negro">Negro</mat-option>
+          <mat-option value="black" *ngFor="let item of colores let indice=index" [style.background-color]="item" [value]="item">{{item}}</mat-option>
+          <!-- <mat-option value="negro">Negro</mat-option>
           <mat-option value="cafe">Cafe</mat-option>
           <mat-option value="rojo">Rojo</mat-option>
           <mat-option value="naranja">Naranja</mat-option>
@@ -16,7 +16,7 @@
           <mat-option value="azul">Azul</mat-option>
           <mat-option value="violeta">Violeta</mat-option>
           <mat-option value="gris">Gris</mat-option>
-          <mat-option value="blanco">Blanco</mat-option>
+          <mat-option value="blanco">Blanco</mat-option> -->
         </mat-select>
       </mat-form-field>
     </div>
@@ -25,7 +25,8 @@
       <mat-form-field>
         <mat-label>Banda 2</mat-label>
         <mat-select [(ngModel)]="band2">
-          <mat-option value="negro">Negro</mat-option>
+          <mat-option value="black" *ngFor="let item of colores let indice=index" [style.background-color]="item" [value]="item">{{item}}</mat-option>
+          <!-- <mat-option value="negro">Negro</mat-option>
           <mat-option value="cafe">Cafe</mat-option>
           <mat-option value="rojo">Rojo</mat-option>
           <mat-option value="naranja">Naranja</mat-option>
@@ -34,7 +35,7 @@
           <mat-option value="azul">Azul</mat-option>
           <mat-option value="violeta">Violeta</mat-option>
           <mat-option value="gris">Gris</mat-option>
-          <mat-option value="blanco">Blanco</mat-option>
+          <mat-option value="blanco">Blanco</mat-option> -->
         </mat-select>
       </mat-form-field>
     </div>
@@ -43,7 +44,8 @@
       <mat-form-field>
         <mat-label>Banda 3</mat-label>
         <mat-select [(ngModel)]="band3">
-          <mat-option value="negro">Negro</mat-option>
+          <mat-option value="black" *ngFor="let item of colores let indice=index" [style.background-color]="item" [value]="item">{{item}}</mat-option>
+          <!-- <mat-option value="negro">Negro</mat-option>
           <mat-option value="cafe">Cafe</mat-option>
           <mat-option value="rojo">Rojo</mat-option>
           <mat-option value="naranja">Naranja</mat-option>
@@ -52,7 +54,7 @@
           <mat-option value="azul">Azul</mat-option>
           <mat-option value="violeta">Violeta</mat-option>
           <mat-option value="gris">Gris</mat-option>
-          <mat-option value="blanco">Blanco</mat-option>
+          <mat-option value="blanco">Blanco</mat-option> -->
         </mat-select>
       </mat-form-field>
     </div>
@@ -60,8 +62,8 @@
     <div class="col-mb-6">
       <h3>Tolerancia: </h3>
       <mat-radio-group aria-label="Select an option" [(ngModel)]="tole">
-        <mat-radio-button value="oro" >Oro</mat-radio-button>
-        <mat-radio-button value="plata">Plata</mat-radio-button>
+        <mat-radio-button value="gold">Oro</mat-radio-button>
+        <mat-radio-button value="silver">Plata</mat-radio-button>
       </mat-radio-group>
 
     </div>
@@ -79,6 +81,7 @@
           <th>Banda 1</th>
           <th>Banda 2</th>
           <th>Banda 3</th>
+          <th>Tolerancia</th>
           <th>Valor</th>
           <th>Valor min.</th>
           <th>Valor max.</th>
@@ -86,14 +89,17 @@
       </thead>
       <tbody class="cuerpo-tabla">
         <tr>
-          <td>
+          <td [style.background-color]="band1">
             {{band1}}
           </td>
-          <td>
+          <td [style.background-color]="band2">
             {{band2}}
           </td>
-          <td>
+          <td [style.background-color]="band3">
             {{band3}}
+          </td>
+          <td [style.background-color]="tole">
+            {{tole}}
           </td>
           <td>
             {{resistencia}}
