@@ -1,0 +1,65 @@
+.contenedor{
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  background-color: beige;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo{
+  text-align: center;
+  font-size: 48px;
+}
+
+.pedido{
+  padding: 25px;
+  margin-bottom: 5px;
+  border: 2px solid gainsboro;
+  border-radius: 8px;
+  width: 1000px;
+}
+
+.compra{
+  padding: 10px;
+  display: flex;
+  border: 2px solid gainsboro;
+  border-radius: 8px;
+}
+
+.detalle{
+  width: 60%;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.tabla{
+  background-color: white;
+  height: 200px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  overflow-y: scroll;
+}
+
+.ventasT{
+  width: 40%;
+  padding: 10px;
+  margin: 10px;
+  height: 300px;
+  background-color: gainsboro;
+  border: 2px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listaVentas{
+  overflow-y: scroll;
+  width: 100%;
+}

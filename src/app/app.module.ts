@@ -8,6 +8,7 @@ import { MenuComponent } from './Tarea/menu/menu.component';
 import { DistanciaPuntosModule } from './Tarea/distancia-puntos/distancia-puntos.module';
 import { ResistenciasModule } from './Tarea/resistencias/resistencias.module';
 import { CinepolisModule } from './Tarea/cinepolis/cinepolis.module';
+import { PizzasModule } from './Tarea/pizzas/pizzas.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CinepolisModule } from './Tarea/cinepolis/cinepolis.module';
     BrowserAnimationsModule,
     DistanciaPuntosModule,
     ResistenciasModule,
-    CinepolisModule
+    CinepolisModule,
+    PizzasModule
   ],
   providers: [],
   bootstrap: [AppComponent]

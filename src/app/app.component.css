@@ -1,4 +1,7 @@
 .contenedor-principal{
   display: flex;
-  margin: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
 }

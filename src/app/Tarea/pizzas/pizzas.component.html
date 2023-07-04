@@ -1,0 +1,153 @@
+<div class="contenedor">
+  <h1 class="titulo">Pizzería</h1>
+  <br>
+  <div class="pedido">
+
+    <form (ngSubmit)="agregarOrden()" [formGroup]="pizzasForm">
+
+      <div class="row">
+
+        <div class="col-md-4">
+           <label for="nombre" class="form-label">Nombre: </label>
+           <input name="nombre" id="nombre" class="form-control" formControlName="nombre">
+           <div *ngIf="pizzasForm.get('nombre')?.touched && pizzasForm.get('nombre')?.errors?.['required']" class="alert alert-danger">
+            Este campo es requerido
+          </div>
+        </div>
+
+        <div class="col-md-4">
+           <label for="direccion" class="form-label">Dirección: </label>
+           <input name="direccion" id="direccion" class="form-control" formControlName="direccion">
+           <div *ngIf="pizzasForm.get('direccion')?.touched && pizzasForm.get('direccion')?.errors?.['required']" class="alert alert-danger">
+            Este campo es requerido
+          </div>
+        </div>
+
+        <div class="col-md-4">
+           <label for="tel" class="form-label">Telefono: </label>
+           <input name="tel" id="tel" class="form-control"  maxlength="10" formControlName="telefono">
+           <div *ngIf="pizzasForm.get('telefono')?.touched && pizzasForm.get('telefono')?.errors?.['required']" class="alert alert-danger">
+            Este campo es requerido
+          </div>
+        </div>
+
+       </div>
+
+       <div class="row mt-4">
+        <div class="col-4" id="tamanos" >
+          <h3>Tamaño de pizza</h3>
+          <div class="form-check">
+
+            <input type="radio" name="tamano" value="chica" class="form-check-input" formControlName="tamano" checked>
+            <label for="tam" class="form-check-label" >Chica $40</label>
+            <br>
+
+            <input type="radio" name="tamano" value="mediana" class="form-check-input" formControlName="tamano">
+            <label for="tam" class="form-check-label">Mediana $80</label>
+            <br>
+
+            <input type="radio" name="tamano" value="grande" class="form-check-input" formControlName="tamano">
+            <label for="tam" class="form-check-label">Grande $120</label>
+
+          </div>
+
+        </div>
+
+        <div class="col-4" id="ingredientes">
+          <h3>Ingredientes</h3>
+          <div class="form-check" *ngFor="let ingredient of ingredientes" >
+            <input class="form-check-input" type="checkbox" [value]="ingredient" (change)="manejarCambioCheckbox(ingredient)">
+            <label class="form-check-label" for="">
+              {{ingredient}} $10
+            </label>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="form-group">
+            <label for="numPizzas" class="form-label">Num. de Pizzas</label>
+            <input class="form-control" name="numPizzas" id="numPizzas" formControlName="numPizzas" type="number">
+            <div *ngIf="pizzasForm.get('numPizzas')?.touched && pizzasForm.get('numPizzas')?.errors?.['required']" class="alert alert-danger">
+              Este campo es requerido
+            </div>
+          </div>
+          <br>
+          <div>
+            <button class="btn btn-outline-warning" type="submit">Agregar</button>
+          </div>
+        </div>
+       </div>
+
+    </form>
+
+  </div>
+
+  <div class="compra">
+
+    <div class="detalle">
+
+      <div class="row">
+
+        <div class="col-12 mb-3">
+
+          <div class="tabla">
+
+            <table class="table table-striped">
+
+              <thead>
+                <tr>
+                  <th>Tamaño</th>
+                  <th>Ingredientes</th>
+                  <th>Num. Pizzas</th>
+                  <th>Sub Total</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let pizza of ordenPizza">
+
+                <tr>
+                  <td>{{pizza.tamanio}}</td>
+                  <td>{{pizza.ingredientes}}</td>
+                  <td>{{pizza.numPizzas}}</td>
+                  <td>{{pizza.subTotal}}</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+        <div class="col-5">
+          <button class="btn btn-outline-danger" (click)="quitar()">Quitar</button>
+        </div>
+
+        <div class="col-5">
+          <button class="btn btn-outline-success" (click)="alertaCompra()">Terminar</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="ventasT">
+      <h2>Ventas del día</h2>
+      <div class="listaVentas" >
+       <table class="table ">
+          <tbody *ngFor="let items of ordenFinalizada">
+            <tr>
+              <th>{{items.nombre}}</th>
+              <th>${{items.total}}</th>
+            </tr>
+          </tbody>
+       </table>
+      </div>
+      <div style="border-top: 2px solid black;">
+        <h2>Ventas totales del dia: ${{sumaTotales()}}</h2>
+      </div>
+    </div>
+
+  </div>
+
+</div>
